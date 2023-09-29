@@ -1,0 +1,10 @@
+mqtt:
+  url : ${url}
+  port: 1883
+  qos: 0
+  topic: ${topic}
+  username : ${username}
+  password : ${password}
+spring:
+    main:
+      web-application-type: none
