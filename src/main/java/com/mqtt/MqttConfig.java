@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.IntegrationComponentScan;
 import org.springframework.integration.mqtt.core.DefaultMqttPahoClientFactory;
+import java.util.UUID;
 
 @Configuration
 @IntegrationComponentScan
@@ -34,6 +35,7 @@ public class MqttConfig {
         options.setCleanSession(true);
         options.setUserName(mqttUsername);
         options.setPassword(mqttPassword.toCharArray());
+
         return options;
     }
 
@@ -41,6 +43,9 @@ public class MqttConfig {
     public DefaultMqttPahoClientFactory defaultMqttPahoClientFactory() {
         DefaultMqttPahoClientFactory clientFactory = new DefaultMqttPahoClientFactory();
         clientFactory.setConnectionOptions(connectOptions());
+
+
+
         return clientFactory;
     }
 }
