@@ -26,7 +26,7 @@ public class MqttSubscriber {
 
     private static final String BROKER_URL = System.getenv("url");
     private static final String MQTT_CLIENT_ID = MqttAsyncClient.generateClientId();
-    private static final String TOPIC_FILTER = "application";
+    private static final String TOPIC_FILTER = System.getenv("topic");
     private static final String MQTT_USERNAME = System.getenv("username");
     private static final String MQTT_PASSWORD = System.getenv("password");
 
