@@ -8,3 +8,9 @@ mqtt:
 spring:
     main:
       web-application-type: none
+
+es:
+  url: localhost
+  port: 9200
+
+#https://github.com/sematext/logagent-js/blob/master/config/examples/elasticsearch-http-input_mqtt-output.yml
