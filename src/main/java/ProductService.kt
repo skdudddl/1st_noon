@@ -1,5 +1,3 @@
-import org.springframework.transaction.annotation.Transactional
-
 @Service
 class ProductService(
         val productDocumentRepository: ProductDocumentRepository
@@ -8,6 +6,12 @@ class ProductService(
     fun save(productDto: ProductDto) {
         productDocumentRepository.save(
                 ProductDocument(
+                        id = productDto.id
+                        , name = productDto.name
+                        , price = productDto.price
+                        , description = productDto.description
+                        , quantity = productDto.quantity
+                        , createdAt = LocalDateTime.now()
                 )
         )
     }
@@ -17,7 +21,12 @@ class ProductService(
         val findProducts = productDocumentRepository.findAll()
         return findProducts.map { product ->
             ProductDto(
-
+                    product.id,
+                    product.name,
+                    product.price,
+                    product.description,
+                    product.quantity,
+                    product.createdAt
             )
         }
     }
@@ -26,7 +35,12 @@ class ProductService(
     fun searchByName(name: String): ProductDto {
         val findProduct = productDocumentRepository.findByName(name) ?: throw RuntimeException("not found product")
         return ProductDto(
-
+                id = findProduct.id,
+                name = findProduct.name,
+                price = findProduct.price,
+                description = findProduct.description,
+                quantity = findProduct.quantity,
+                createAt = findProduct.createdAt
         )
     }
 }

@@ -1,9 +1,11 @@
-import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.*
-
-class ProductDto() {
-
-}
+data class ProductDto(
+        var id: Long,
+        var name: String,
+        var price: Int,
+        var description: String,
+        var quantity: Int,
+        var createAt: LocalDateTime?
+)
 @RestController
 class ProductController(
         val productService: ProductService

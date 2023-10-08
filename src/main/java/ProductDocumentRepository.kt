@@ -1,4 +1,3 @@
-import org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchRepositoriesAutoConfiguration
 import org.springframework.stereotype.Repository
 
 @Repository
