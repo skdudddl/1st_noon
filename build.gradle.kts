@@ -20,6 +20,12 @@ dependencies {
     api("org.springframework.integration:spring-integration-stream:5.2.5.RELEASE")
     api("org.springframework.integration:spring-integration-mqtt:5.2.5.RELEASE")
     api("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
+    implementation("org.springframework.data:spring-data-elasticsearch:8.10.1")
+    implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 group = "org.example"

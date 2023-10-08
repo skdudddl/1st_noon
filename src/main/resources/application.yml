@@ -9,8 +9,12 @@ spring:
     main:
       web-application-type: none
 
-es:
-  url: localhost
+elasticsearch:
+  host: localhost
   port: 9200
 
-#https://github.com/sematext/logagent-js/blob/master/config/examples/elasticsearch-http-input_mqtt-output.yml
+logging:
+  level:
+    org.springframework: INFO
+
+#https://velog.io/@leejw951208/Spring-Data-Elasticsearch-%EC%97%B0%EB%8F%99
